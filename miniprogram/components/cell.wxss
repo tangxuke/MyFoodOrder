@@ -1,0 +1,14 @@
+/* components/cell.wxss */
+
+
+
+.title{
+  width: 30%;
+  text-align: right;
+  padding: 10px;
+}
+
+.content{
+  width: 70%;
+  padding: 10px;
+}

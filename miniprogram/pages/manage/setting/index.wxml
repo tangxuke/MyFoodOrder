@@ -1,0 +1,16 @@
+<i-panel title="单位设置">
+  <van-field label="单位名称" value="{{Name}}" id="Name" bind:change="onChange" required placeholder="请输入单位名称"></van-field>
+  <van-field label="联系人" value="{{Contact}}" id="Contact" bind:change="onChange" placeholder="请输入联系人姓名"></van-field>
+  <van-field label="联系电话" value="{{Tel}}" id="Tel" bind:change="onChange" placeholder="请输入联系电话"></van-field>
+</i-panel>
+
+<i-panel title="打印设置" icon="add">
+  <van-field label="打印机编号" value="{{PrinterSN}}" id="PrinterSN" bind:change="onChange" use-button-slot placeholder="请输入打印机SN号码">
+    <van-button slot="button" size="small" type="info" bind:click="printTest">打印测试</van-button>
+  </van-field>
+</i-panel>
+
+<view style='margin-top:40px;'>
+  <i-button type='success' bind:click="save">保存</i-button>
+  <i-button type='ghost' bind:click="close">返回</i-button>
+</view>

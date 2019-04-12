@@ -1,0 +1,9 @@
+<view class="container">
+  <view class='item-label'>{{item.Name}}</view>
+  <view class='item-price'>￥{{item.Price}}</view>
+  <view class='item-icon'>
+    <text class='icon' wx:if="{{item.Qty>0}}" catchtap='del'>-</text>
+    <text class='text' wx:if="{{item.Qty>0}}">{{item.Qty}}</text>
+    <text class='icon' catchtap='add'>+</text>
+  </view>
+</view>

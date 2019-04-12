@@ -1,0 +1,6 @@
+<!--miniprogram/pages/client/index/index.wxml-->
+
+
+<van-cell title="点餐" is-link url="../order/index"></van-cell>
+<van-cell title="预约" is-link></van-cell>
+<van-cell title="我的订单" is-link url="../my-order/index"></van-cell>

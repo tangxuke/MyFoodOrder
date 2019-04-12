@@ -1,0 +1,4 @@
+<view>
+<image src="{{ImageUrl}}" bindtap="close" style="width:100%;"></image>
+</view>
+

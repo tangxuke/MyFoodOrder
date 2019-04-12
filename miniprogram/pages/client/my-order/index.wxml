@@ -1,0 +1,26 @@
+<!--miniprogram/pages/client/my-order/index.wxml-->
+<view class='user-info'>
+  <image src="{{userInfo.avatarUrl}}"></image>
+  <view>{{userInfo.nickName}}</view>
+</view>
+
+<view>
+
+  <view class='item'>
+    <view class='order-date'>2019-04-11 12:00:00</view>
+    <view wx:for="{{[1,2,3]}}">
+      <view class='item-image'>
+        <image src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1734023800,2271298230&fm=26&gp=0.jpg'></image>
+      </view>
+      <view class='item-content'>
+        <view class='item-content-title'>包子</view>
+        <view class='item-content-price'>￥10 x 1</view>
+        <view class='item-content-amount'>￥10</view>
+      </view>
+      <view style='clear:both;'></view>
+    </view>
+  </view>
+
+  <view class='total'>合计：￥20</view>
+
+</view>

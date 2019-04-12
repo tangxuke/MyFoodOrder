@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "order-item":"./order-item"
+  },
+  "navigationBarTitleText":"订餐"
+}

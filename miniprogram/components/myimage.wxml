@@ -1,0 +1,1 @@
+<image src="{{src}}" class="{{class}}" style="{{style}}" id="{{id}}" mode="{{mode}}" bindtap="test" />

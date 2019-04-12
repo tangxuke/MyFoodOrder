@@ -1,0 +1,88 @@
+
+<van-cell-group  style="margin-bottom:100px;">
+  <van-field
+    value="{{ Name }}"
+    required
+    clearable
+    label="名称"
+    placeholder="请输入菜品名称"
+    border="{{ true }}"
+    bind:change="onNameChange"
+  />
+
+  <van-cell title="图片" label="长按删除">
+  <view class='image'>
+    <image wx:if="{{ImageUrl}}" src='{{ImageUrl}}' style='width:100px;height:50px;' bindlongpress="imageLongTap" bindtap='showImage'/>
+    <van-button style='margin-left:10px;' type='primary' bindtap='chooseImage'>{{(ImageUrl?"更换":"添加")+"图片"}}</van-button>
+  </view>
+  </van-cell>
+  <van-field
+    value="{{ Price }}"
+    clearable
+    required
+    label="价格（元）"
+    type="digit"
+    placeholder="请输入菜品价格，单位是元"
+    border="{{ true }}"
+    bind:change="onPriceChange"
+  />
+<van-cell title="供应时段" value="{{SupplyPeriod}}" required bind:click="selectPeriod"></van-cell>
+<van-cell title="供应周期" value="{{SupplyCycle}}" required bind:click="selectCycle"></van-cell>
+</van-cell-group>
+
+
+<button type='primary' style='margin:40px;' bindtap='save'>保存</button>
+<button type='default' wx:if="{{Guid}}" size='mini' style='margin-left:40px;padding:5px;width:50px;' bindtap='remove'><text style="color:red;">删除</text></button>
+
+<!--以下是动作面板区-->
+<!--供应时段面板-->
+<van-dialog
+  use-slot
+  show="{{ showPeriod }}"
+  show-cancel-button
+  bind:confirm="confirmSelectPeriod"
+  bind:close="closePeriodDialog"
+>
+<van-checkbox-group value="{{ resultPeriod }}">
+    <van-cell-group >
+      <van-cell
+        wx:for="{{ listPeriod }}"
+        wx:key="{{ index }}"
+        title="{{ item }}"
+        value-class="value-class"
+        clickable
+        data-name="{{ item }}"
+        bind:click="togglePeriod"
+      >
+        <van-checkbox class="checkboxes-{{ item }}" name="{{ item }}" />
+      </van-cell>
+    </van-cell-group>
+  </van-checkbox-group>
+</van-dialog>
+
+
+
+
+<van-dialog
+  use-slot
+  show="{{ showCycle }}"
+  show-cancel-button
+  bind:confirm="confirmSelectCycle"
+  bind:close="closeCycleDialog"
+>
+<van-checkbox-group value="{{ resultCycle }}">
+    <van-cell-group >
+      <van-cell
+        wx:for="{{ listCycle }}"
+        wx:key="{{ index }}"
+        title="{{ item }}"
+        value-class="value-class"
+        clickable
+        data-name="{{ item }}"
+        bind:click="toggleCycle"
+      >
+        <van-checkbox class="checkboxes-{{ item }}" name="{{ item }}" />
+      </van-cell>
+    </van-cell-group>
+  </van-checkbox-group>
+</van-dialog>

@@ -1,0 +1,57 @@
+/* miniprogram/pages/client/my-order/index.wxss */
+.user-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.user-info image{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.user-info view{
+  color: #a60000;
+}
+
+.order-date{
+  color: #c0c0c0;
+  font-size: 0.8rem;
+}
+
+.item-content-title{
+  font-size: 1.2rem;
+}
+
+.item-image{
+  width: 60px;
+  height:100%;
+  float: left;
+}
+
+.item-image image{
+  width:100%;
+  height:100%;
+}
+
+.item-content{
+  padding-left: 70px;
+}
+
+.item-content-cancel-btn{
+  width: 100px;
+  float: right;
+}
+
+.item-content-price{
+  color:#a60000;
+  font-size: 0.8rem;
+}
+
+.item-content-amount{
+  font-size: 1rem;
+  color: red;
+}

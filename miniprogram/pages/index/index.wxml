@@ -1,0 +1,4 @@
+<van-button size="large" bind:click="gotoManageSide">管理端</van-button>
+<van-button size="large" bind:click="gotoUserSide">用户端</van-button>
+<van-button size="large" disabled>厨房端</van-button>
+<van-button size="large" open-type="getUserInfo" bind:getuserinfo="getUserInfo">获取用户信息测试</van-button>

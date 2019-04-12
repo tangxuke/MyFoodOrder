@@ -1,0 +1,75 @@
+/* miniprogram/pages/client/order/index.wxss */
+.card{
+  display: flex;
+  align-items: stretch;
+  margin-top: 2px;
+  background-color: #fafafa;
+}
+
+.card:first-child{
+  margin-top: 0;
+}
+
+.card-image{
+  height: 90px;
+  width: 90px;
+  margin: 10px;
+}
+
+.card-image image{
+  border-radius: 10px;
+  border: 1px solid #c0c0c0;
+}
+
+.card-content{
+  flex: 1;
+  position: relative;
+  padding: 10px;
+}
+
+.card-title{
+  font-size: 1.2rem;
+}
+
+.card-desc{
+  font-size: 0.8rem;
+  color: #a0a0a0;
+}
+
+.card-price{
+  position: absolute;
+  bottom: 0;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.card-button{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right:0;
+  bottom: 0;
+  margin: 10px;
+  background-color: palegreen;
+  color: white;
+  border-radius: 4px;
+}
+
+.icon {
+  display: block;
+  color: #455a64;
+}
+
+.ordered{
+  border: 2px solid blue;
+}
+
+.mark{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.33);
+  z-index: 101;
+}

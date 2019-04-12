@@ -1,0 +1,42 @@
+<van-cell
+  title="添加新菜单"
+  icon="plus"
+  is-link
+  url="./new"
+/>
+<van-cell
+  title="供应时段"
+  fix-title
+  icon="clock-o"
+  value="早餐,午餐,晚餐,夜宵"
+/>
+<van-cell
+  title="供应周期"
+  icon="calender-o"
+  class="fix-title"
+  value="周一,周二,周三,周四,周五,周六,周日"
+/>
+<van-cell class="item">
+  <view slot="title" class='item'>
+  </view>
+</van-cell>
+
+<van-swipe-cell 
+  wx:for="{{items}}"  
+  wx:key="item.Name" 
+  data-guid="{{item.guid}}"
+  bind:click="editMenu"
+  right-width="{{ 65 }}">
+  <view class='item'>
+    <view class='item-image'>
+      <image src="{{item.ImageUrl}}" style='width:90px;height:90px;' mode='aspectFit'/>
+    </view>
+    <view class='item-content'>
+      <view style='margin:10px;'>{{item.Name}}</view>
+      <view style='color:red;margin:10px;'>￥{{item.Price}}</view>
+      <view style='font-size:14px;color:#c0c0c0;margin:10px;'>{{item.Period}}</view>
+      <view style='font-size:14px;color:#c0c0c0;margin:10px;'>{{item.Cycle}}</view>
+    </view>
+  </view>
+  <view slot="right">删除</view>
+</van-swipe-cell>

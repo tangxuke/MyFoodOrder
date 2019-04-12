@@ -1,0 +1,45 @@
+/* pages/client/order/order-item.wxss */
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #c0c0c0;
+  height: 40px;
+  line-height: 40px;
+}
+
+.item-label{
+  padding: 0 10px;
+
+}
+
+.item-price{
+  text-align: left;
+  padding: 0 10px;
+  color: red;
+}
+
+.item-icon{
+  text-align: right;
+  padding: 0 10px;
+}
+
+.item-icon text{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  text-align: center;
+  margin: 5px 0;
+  font-size: 1.5rem;
+}
+
+.item-icon .text{
+  color: #a60000;
+}
+
+.item-icon .icon{
+  background-color: red;
+  color: #fff;
+  border-radius: 15px;
+}

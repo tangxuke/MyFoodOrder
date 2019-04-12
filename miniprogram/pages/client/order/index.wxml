@@ -1,0 +1,40 @@
+<view class="card" wx:for="{{items}}" wx:key="{{item.Name}}" data-guid="{{item.guid}}" bindtap='add'>
+  <view class="card-image" catchtap='showImage' data-url="{{item.ImageUrl}}">
+    <image mode="aspectFill" style="width:100%;height:100%;" src="{{item.ImageUrl}}"/>
+  </view>
+  <view class='card-content'>
+    <view class='card-title'>{{item.Name}}</view>
+    <view class='card-desc'>已售0份 好评0份</view>
+    <view class='card-price'>￥{{item.Price}}</view>
+    <view class='card-button' wx:if="{{item.Qty>0}}" catchtap="reduce" data-guid="{{item.guid}}">
+        <view style='margin:0 5px;'>{{item.Qty}} 份</view>
+        <i-icon type="close" size="30" color="#ffffff" />
+    </view>
+  </view>
+</view>
+
+<view style='margin:10px;border:1px solid #a60000;border-radius:10px;border-bottom:5px solid #a60000;position:fixed;bottom:40px;width:calc(100% - 20px);background:#fff;z-index:102;' wx:if="{{showMark && count>0}}">
+  <view style='background-color:#a60000;color:#fff;text-align:center;height:35px;line-height:35px;  border-top-left-radius:6px;border-top-right-radius:6px;'>我的选单</view>
+
+  <order-item wx:for="{{items}}" wx:key="{{item.Name}}" item="{{item}}" wx:if="{{item.Qty>0}}" bind:order-del="myOrderDel" bind:order-add="myOrderAdd"></order-item>
+
+  <view style='height:10px;'></view>
+</view>
+
+
+<view style='padding:100px;'></view>
+
+
+<van-submit-bar
+    disabled="{{count===0}}"
+    price="{{ amount*100 }}"
+    button-text="提交订单"
+    bind:submit="submitOrder"
+    custom-class="van-submit-bar"
+    safe-area-inset-bottom="{{ false }}"
+    style="z-index:1;"
+  >
+ <text style='padding-left:20px;font-size:14px;' catchtap='showOrder'>共<text style='color:red;font-weight:bold;padding:0 5px;'>{{count}}</text>件</text>
+  </van-submit-bar>
+
+<view class='mark' wx:if="{{showMark && count>0}}" catchtap='closeMask'></view>
